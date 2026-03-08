@@ -61,7 +61,7 @@ export function buildColorCommand(rgb: RGB): string {
 	const rr = byteToHex(clamp(rgb.r, 0, 255));
 	const gg = byteToHex(clamp(rgb.g, 0, 255));
 	const bb = byteToHex(clamp(rgb.b, 0, 255));
-	return `${CMD_PREFIXES.color}${rr}${gg}${bb}${CMD_POSTFIX}`;
+	return `${CMD_PREFIXES.color}${rr}${gg}${bb}${CMD_SUFFIX}`;
 }
 
 /**
