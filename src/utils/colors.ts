@@ -8,7 +8,9 @@ export interface RGB {
 
 /**
  * Convert a hex color string to an RGB object.
- * E.g. "#ff0080" → { r: 255, g: 0, b: 128 }
+ *
+ * @example
+ * "#ff0080" → { r: 255, g: 0, b: 128 }
  */
 export function hexToRgb(hex: string): RGB {
 	const clean = hex.replace("#", "");
@@ -21,7 +23,8 @@ export function hexToRgb(hex: string): RGB {
 
 /**
  * Convert an RGB object to a CSS hex color string.
- * E.g. { r: 255, g: 0, b: 128 } → "#ff0080"
+ * @example
+ * { r: 255, g: 0, b: 128 } → "#ff0080"
  */
 export function rgbToHex({ r, g, b }: RGB): string {
 	return `#${byteToHex(r)}${byteToHex(g)}${byteToHex(b)}`;

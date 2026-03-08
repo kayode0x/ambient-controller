@@ -1,11 +1,3 @@
-/**
- * Protocol Format:
- * Color:      7e ff 05 03 [RR] [GG] [BB] ff ef
- * Mode:       7e ff 03 [MODE] 03 ff ff ff ef
- * Brightness: 7e ff 01 [VAL] 00 ff ff ff ef   (VAL: 0x01-0x64)
- * Speed:      7e ff 02 [VAL] 00 ff ff ff ef   (VAL: 0x03-0x64)
- */
-
 export type ModeId =
 	| "3color_jump"
 	| "7color_jump"
