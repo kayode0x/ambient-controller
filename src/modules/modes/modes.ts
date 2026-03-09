@@ -1,35 +1,10 @@
-export type ModeId =
-	| "3color_jump"
-	| "7color_jump"
-	| "3color_gradient"
-	| "7color_gradient"
-	| "red_gradient"
-	| "green_gradient"
-	| "blue_gradient"
-	| "yellow_gradient"
-	| "cyan_gradient"
-	| "purple_gradient"
-	| "white_gradient"
-	| "red_green_gradient"
-	| "red_blue_gradient"
-	| "green_blue_gradient"
-	| "7color_flash"
-	| "red_flash"
-	| "green_flash"
-	| "blue_flash"
-	| "yellow_flash"
-	| "cyan_flash"
-	| "purple_flash"
-	| "white_flash"
-	| "7color_breathe";
-
-export type ModeCategory = "jump" | "gradient" | "flash" | "breathe";
+import type { ModeCategoryId, ModeId } from "@/types";
 
 export interface ModeDefinition {
 	id: ModeId;
 	label: string;
 	byte: number;
-	category: ModeCategory;
+	category: ModeCategoryId;
 
 	/** True if this mode cycles through colors automatically (no custom color needed) */
 	isAutoColor: boolean;
@@ -211,12 +186,14 @@ export const MODES: Record<ModeId, ModeDefinition> = {
 	},
 };
 
+export const ALL_MODES = Object.values(MODES);
+
 /**
  * All modes grouped by category — useful for rendering sectioned lists in the UI
  */
-export const MODES_BY_CATEGORY: Record<ModeCategory, ModeDefinition[]> = {
-	jump: Object.values(MODES).filter((m) => m.category === "jump"),
-	gradient: Object.values(MODES).filter((m) => m.category === "gradient"),
-	flash: Object.values(MODES).filter((m) => m.category === "flash"),
-	breathe: Object.values(MODES).filter((m) => m.category === "breathe"),
+export const MODES_BY_CATEGORY: Record<ModeCategoryId, ModeDefinition[]> = {
+	jump: ALL_MODES.filter((m) => m.category === "jump"),
+	gradient: ALL_MODES.filter((m) => m.category === "gradient"),
+	flash: ALL_MODES.filter((m) => m.category === "flash"),
+	breathe: ALL_MODES.filter((m) => m.category === "breathe"),
 };
