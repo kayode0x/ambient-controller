@@ -13,6 +13,8 @@
     "release:ios:simulator": "eas build --profile development-simulator --platform ios --clear-cache"
   },
   "dependencies": {
+    "@codeherence/react-native-header": "^1.0.0",
+    "@gorhom/bottom-sheet": "^5",
     "@legendapp/state": "beta",
     "@react-native-community/slider": "^5.1.2",
     "@react-navigation/bottom-tabs": "^7.7.3",
@@ -31,7 +33,6 @@
     "expo-status-bar": "~55.0.4",
     "expo-symbols": "~55.0.5",
     "expo-system-ui": "~55.0.9",
-    "expo-web-browser": "~55.0.9",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-native": "0.83.2",
@@ -52,5 +53,8 @@
     "@types/react-native-base64": "^0.2.2",
     "typescript": "~5.9.2"
   },
-  "private": true
+  "private": true,
+  "patchedDependencies": {
+    "@codeherence/react-native-header@1.0.0": "patches/@codeherence%2Freact-native-header@1.0.0.patch"
+  }
 }
